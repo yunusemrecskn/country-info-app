@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+    📄 HTML5 Belgesi
+    Sayfanın HTML5 standartlarında olduğunu belirtir
+-->
+<html lang="tr">
+<head>
+    <!-- Karakter seti (Türkçe karakter desteği) -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive tasarım için viewport ayarı -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sayfa başlığı -->
+    <title>Ülke Arama Motoru</title>
+
+    <!-- Google Font: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome ikon kütüphanesi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Projeye ait ana CSS dosyası -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         🌈 Arka Plan Görsel Efektleri (Glassmorphism / Blob)
+         Tamamen görsel amaçlıdır
+    ====================================================== -->
+    <div class="bg-visual">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- =====================================================
+         📦 Uygulamanın Ana Konteyneri
+         Tüm içerik bu alanın içinde yer alır
+    ====================================================== -->
+    <div class="app-container">
+
+        <!-- ================== NAVBAR ================== -->
+        <nav class="glass-nav">
+
+            <!-- Logo / Başlık -->
+            <div class="logo">Ülke Arama <span>Motoru</span></div>
+
+            <!-- Tema değiştirme butonu -->
+            <button id="themeToggle" class="nav-btn" aria-label="Tema değiştir">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </nav>
+
+        <!-- ================== HERO ALANI ================== -->
+        <header class="hero">
+            <!-- Ana başlık -->
+            <h1>Ülkeleri Keşfet</h1>
+
+            <!-- Açıklama metni -->
+            <p>Kadir Aram Hocamız İçin Ülke Arama Paneli</p>
+        </header>
+
+        <!-- ================== ARAMA ALANI ================== -->
+        <div class="search-glass">
+
+            <!-- Arama ikonu -->
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <!-- Ülke adı giriş alanı -->
+            <input
+                type="text"
+                id="countryInput"
+                placeholder="Ülke adı yazın (Türkiye, Germany...)"
+                autocomplete="off"
+            >
+
+            <!-- Arama butonu -->
+            <button id="searchBtn">Sorgula Reis</button>
+        </div>
+
+        <!-- ================== SONUÇ ALANI ================== -->
+        <!-- JavaScript ile dinamik olarak doldurulur -->
+        <main id="result"></main>
+
+    </div>
+
+    <!-- =====================================================
+         📜 JavaScript Dosyası
+         Tüm işlevsellik (API, tema, saat, ses) buradan yönetilir
+    ====================================================== -->
+    <script src="script.js"></script>
+
+</body>
+</html>
