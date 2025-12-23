@@ -1,7 +1,5 @@
-/* ============================================================
-   🎨 GLOBAL CSS DEĞİŞKENLERİ (Dark Theme Varsayılan)
-   Projede renk yönetimi tek merkezden yapılır
-============================================================ */
+/*  GLOBAL CSS DEĞİŞKENLERİ koyu tema
+renk yönetimi */
 :root {
     --primary: #6366f1;   /* Ana vurgu rengi */
     --accent: #00d2ff;    /* İkincil vurgu rengi */
@@ -11,10 +9,9 @@
     --text: #fff;        /* Ana yazı rengi */
 }
 
-/* ============================================================
-   🌙 Light Theme Değişkenleri
-   JavaScript ile body'e light-theme class'ı eklenince aktif olur
-============================================================ */
+/* Açık tema
+   JavaScript ile body light-theme classı eklenince aktif olur
+*/
 body.light-theme {
     --bg: #f8fafc;
     --card: rgba(255,255,255,0.7);
@@ -22,9 +19,7 @@ body.light-theme {
     --text: #1e293b;
 }
 
-/* ============================================================
-   🔧 Global Reset & Genel Ayarlar
-============================================================ */
+/*  Global Reset ve ayarlar */
 * {
     margin: 0;
     padding: 0;
@@ -33,9 +28,7 @@ body.light-theme {
     transition: 0.3s ease; /* Yumuşak geçişler */
 }
 
-/* ============================================================
-   🖥️ Body Genel Yapı
-============================================================ */
+/* Body Genel Yapı */
 body {
     background: var(--bg);
     color: var(--text);
@@ -45,10 +38,8 @@ body {
     overflow-x: hidden;
 }
 
-/* ============================================================
-   🌈 Arka Plan Blob Efektleri
-   Sadece görsel amaçlıdır
-============================================================ */
+/*  Arka Plan Blob Efektleri
+   Sadece görsel amaçlıdır*/
 .bg-visual {
     position: fixed;
     inset: 0;
@@ -65,18 +56,15 @@ body {
 .blob-2 { width: 400px; height: 400px; background: #7c3aed; bottom: -80px; right: -80px; }
 .blob-3 { width: 300px; height: 300px; background: #0ea5e9; top: 40%; left: 50%; }
 
-/* ============================================================
-   📦 Ana Layout (Uygulama Konteyneri)
-============================================================ */
+/* Ana Layout Uygulama Konteyneri
+*/
 .app-container {
     width: 100%;
     max-width: 550px;
     padding: 20px;
 }
 
-/* ============================================================
-   🧭 Navbar (Glassmorphism)
-============================================================ */
+/* Navbar Glassmorphism*/
 .glass-nav {
     display: flex;
     justify-content: space-between;
@@ -105,9 +93,7 @@ body {
     cursor: pointer;
 }
 
-/* ============================================================
-   🎯 Hero Alanı
-============================================================ */
+/*  Hero Alanı */
 .hero {
     text-align: center;
     margin-bottom: 30px;
@@ -122,9 +108,7 @@ body {
     opacity: 0.7;
 }
 
-/* ============================================================
-   🔍 Arama Alanı
-============================================================ */
+/*  Arama Alanı */
 .search-glass {
     display: flex;
     align-items: center;
@@ -155,9 +139,8 @@ input {
     cursor: pointer;
 }
 
-/* ============================================================
-   🧾 Ülke Kartı
-============================================================ */
+/* Ülke flag
+ */
 .country-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -166,15 +149,14 @@ input {
     animation: fadeUp 0.6s ease;
 }
 
-/* Kart giriş animasyonu */
+/* bayrak giriş animasyonu */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ============================================================
-   🚩 Bayrak Alanı
-============================================================ */
+/* Bayrak Alanı
+ */
 .flag-box {
     height: 220px;
 }
@@ -185,9 +167,8 @@ input {
     object-fit: cover;
 }
 
-/* ============================================================
-   📄 Kart İçeriği
-============================================================ */
+/*  Kart İçeriği
+ */
 .card-content {
     padding: 28px;
 }
@@ -226,9 +207,8 @@ input {
     cursor: pointer;
 }
 
-/* ============================================================
-   📊 İstatistik Kartları
-============================================================ */
+/*  İstatistik Kartları
+ */
 .stats-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -249,9 +229,9 @@ input {
     margin-bottom: 6px;
 }
 
-/* ============================================================
-   ⏰ Canlı Saat Alanı
-============================================================ */
+/* 
+    Canlı Saat Alanı
+ */
 .time-box {
     margin-top: 22px;
     padding: 18px;
@@ -271,9 +251,8 @@ input {
     color: var(--accent);
 }
 
-/* ============================================================
-   ⏳ Loader (Yükleniyor Animasyonu)
-============================================================ */
+/* Loader (Yükleniyor Animasyonu)
+ */
 .loader {
     width: 36px;
     height: 36px;
@@ -288,9 +267,8 @@ input {
     to { transform: rotate(360deg); }
 }
 
-/* ============================================================
-   ❌ Hata Mesajı Kutusu
-============================================================ */
+/* Hata Mesajı Kutusu
+ */
 .error-box {
     text-align: center;
     padding: 20px;
@@ -299,9 +277,8 @@ input {
     color: #ff4b4b;
 }
 
-/* ============================================================
-   📱 Mobile Responsive Ayarlar
-============================================================ */
+/*  Mobile Responsive Ayarlar
+ */
 @media (max-width: 480px) {
     .hero h1 { font-size: 2.1rem; }
     .search-glass { flex-direction: column; }
