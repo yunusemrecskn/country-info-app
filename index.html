@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-    📄 HTML5 Belgesi
+    HTML5 Belgesi
     Sayfanın HTML5 standartlarında olduğunu belirtir
 -->
 <html lang="tr">
@@ -27,8 +27,8 @@
 <body>
 
     <!-- =====================================================
-         🌈 Arka Plan Görsel Efektleri (Glassmorphism / Blob)
-         Tamamen görsel amaçlıdır
+         Arka Plan Görsel Efektleri (Glassmorphism / Blob)
+         Görsellik
     ====================================================== -->
     <div class="bg-visual">
         <div class="blob blob-1"></div>
@@ -37,15 +37,15 @@
     </div>
 
     <!-- =====================================================
-         📦 Uygulamanın Ana Konteyneri
-         Tüm içerik bu alanın içinde yer alır
+         Uygulamanın Ana Konteyneri
+         Tüm içerik bu alanın içinde
     ====================================================== -->
     <div class="app-container">
 
         <!-- ================== NAVBAR ================== -->
         <nav class="glass-nav">
 
-            <!-- Logo / Başlık -->
+            <!-- Logo - Başlık -->
             <div class="logo">Ülke Arama <span>Motoru</span></div>
 
             <!-- Tema değiştirme butonu -->
@@ -54,7 +54,7 @@
             </button>
         </nav>
 
-        <!-- ================== HERO ALANI ================== -->
+        <!-- HERO -->
         <header class="hero">
             <!-- Ana başlık -->
             <h1>Ülkeleri Keşfet</h1>
@@ -63,13 +63,13 @@
             <p>Kadir Aram Hocamız İçin Ülke Arama Paneli</p>
         </header>
 
-        <!-- ================== ARAMA ALANI ================== -->
+        <!--Arama Alanı-->
         <div class="search-glass">
 
             <!-- Arama ikonu -->
             <i class="fa-solid fa-magnifying-glass"></i>
 
-            <!-- Ülke adı giriş alanı -->
+            <!-- Ülke adı giriş -->
             <input
                 type="text"
                 id="countryInput"
@@ -81,16 +81,14 @@
             <button id="searchBtn">Sorgula Reis</button>
         </div>
 
-        <!-- ================== SONUÇ ALANI ================== -->
+            <!-- Sonuç  -->
         <!-- JavaScript ile dinamik olarak doldurulur -->
         <main id="result"></main>
 
     </div>
 
-    <!-- =====================================================
-         📜 JavaScript Dosyası
-         Tüm işlevsellik (API, tema, saat, ses) buradan yönetilir
-    ====================================================== -->
+    <!-- JavaScript Dosyası
+        (API, tema, saat, ses) buradan yönetilir -->
     <script src="script.js"></script>
 
 </body>
