@@ -1,23 +1,21 @@
-// 🔎 Arama butonunu DOM'dan alır
+// Arama butonunu DOMdan alır
 const searchBtn = document.getElementById('searchBtn');
 
-// 🌍 Ülke adının girildiği input alanı
+// Ülke adının girildiği input 
 const countryInput = document.getElementById('countryInput');
 
-// 📦 Sonuçların yazdırılacağı ana container
+// Sonuçların yazdırılacağı ana container
 const result = document.getElementById('result');
 
-// 🌙 Tema değiştirme butonu
+//  Tema değiştirme butonu
 const themeToggle = document.getElementById('themeToggle');
 
-// ⏱️ Saat güncellemesi için timer referansı
+//  Saat güncellemesi için timer 
 let timer;
 
-/* ============================================================
-   🌍 Dil Çeviri Sözlüğü
-   REST Countries API'den gelen İngilizce dil adlarını
-   Türkçeye çevirmek için kullanılır
-============================================================ */
+/* Dil Çeviri Sözlüğü
+   REST Countries APIden gelen İngilizce dil adlarını
+   Türkçeye çevirmek için kullanılır*/
 const languageTR = {
     Turkish: "Türkçe",
     English: "İngilizce",
@@ -43,10 +41,8 @@ const languageTR = {
     Hindi: "Hintçe"
 };
 
-/* ============================================================
-   🌙 Tema Değiştirme
-   Dark / Light tema geçişini sağlar
-============================================================ */
+/* Tema Değiştirme
+   Dark / Light tema geçişi*/
 themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('light-theme');
 
@@ -56,10 +52,8 @@ themeToggle.addEventListener('click', () => {
     icon.classList.toggle('fa-sun');
 });
 
-/* ============================================================
-   🌍 Ülke Bilgilerini Getirme Fonksiyonu
-   REST Countries API üzerinden ülke verilerini çeker
-============================================================ */
+/* Ülke Bilgilerini Getirme Fonksiyonu
+   REST Countries API üzerinden ülke verilerini çeker */
 async function getCountry(name) {
     if (!name) return;
 
@@ -67,7 +61,7 @@ async function getCountry(name) {
     result.innerHTML = `<div class="loader"></div>`;
 
     try {
-        // Ülkeyi çeviri adına göre API'den getirir
+        // Ülkeyi çeviri adına göre APIden getirir
         const res = await fetch(`https://restcountries.com/v3.1/translation/${name}?fullText=true`);
         if (!res.ok) throw new Error("Ülke bulunamadı");
 
@@ -83,13 +77,11 @@ async function getCountry(name) {
     }
 }
 
-/* ============================================================
-   🧠 Ülke Kartını Oluşturma
-   API'den gelen verileri HTML olarak render eder
-============================================================ */
+/* Ülke Kartını Oluşturma
+   APIden gelen verileri HTML olarak render eder*/
 function renderCard(data, input) {
 
-    // Girilen kelimenin Türkçe karakter içerip içermediğini kontrol eder
+    // Girilen kelimenin Türkçe karakter mi
     const isTurkish = /[ğüşıöçĞÜŞİÖÇ]/.test(input);
 
     // Türkçe ve İngilizce ülke adları
@@ -103,7 +95,7 @@ function renderCard(data, input) {
     const langEN = Object.values(data.languages || {})[0];
     const langTR = languageTR[langEN] || langEN;
 
-    // Zaman dilimi farkını hesaplar
+    // Zaman dilimi farkını 
     const offsetStr = data.timezones[0].replace('UTC', '').replace(':', '.');
     const offset = parseFloat(offsetStr) || 0;
 
@@ -156,10 +148,8 @@ function renderCard(data, input) {
     startClock(offset);
 }
 
-/* ============================================================
-   ⏰ Canlı Saat Fonksiyonu
-   Seçilen ülkenin yerel saatini saniyede bir günceller
-============================================================ */
+/*Canlı Saat Fonksiyonu
+   Seçilen ülkenin yerel saatini günceller*/
 function startClock(offset) {
     clearInterval(timer);
 
@@ -179,10 +169,8 @@ function startClock(offset) {
     }, 1000);
 }
 
-/* ============================================================
-   🔊 Sesli Okuma Fonksiyonu
-   Ülke ve başkent bilgisini Türkçe seslendirir
-============================================================ */
+/*  Sesli Okuma Fonksiyonu
+   Ülke ve başkent bilgisini Türkçe seslendirir */
 function speak(country, capital) {
     window.speechSynthesis.cancel();
 
@@ -194,10 +182,8 @@ function speak(country, capital) {
     window.speechSynthesis.speak(msg);
 }
 
-/* ============================================================
-   🎯 Event Listener'lar
-   Buton tıklama ve Enter tuşu ile arama işlemi
-============================================================ */
+/* Event Listener
+   Buton tıklama ve Enter tuşu ile arama işlemi */
 
 // Arama butonuna tıklanınca
 searchBtn.addEventListener('click', () =>
